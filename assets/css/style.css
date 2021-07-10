@@ -60,7 +60,6 @@
   }
   
   footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     background: var(--secondary);
@@ -85,6 +84,7 @@
     margin: 25px auto;
     width: 95%;
   }
+
   
   .task-list-wrapper {
     flex: 1;
