@@ -215,6 +215,26 @@ var taskStatusChangeHandler = function(event) {
 var saveTasks = function(){
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+var loadTasks = function() {
+    // get items from the localstorage
+     var savedTasks = localStorage.getItem("tasks")
+    if (!savedTasks) {
+        return false;
+    }
+
+    console.log("Save tasks found!")
+
+    // convert task from stringify back into an array
+    savedTasks = JSON.parse(savedTasks);
+    for (var i = 0; i < savedTasks.length; i++) {
+        createTaskEl(savedTasks[i]);
+    }
+
+    // creates tasks elements back onto the page
+}
 pageContentEl.addEventListener("click", taskButtonHandler);
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
+
+loadTasks();
 
